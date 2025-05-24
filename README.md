@@ -1,7 +1,7 @@
 # nFactorial-Ai-Cup-2025
 Fork this repository and build nFactorial Ai Cup 2025 projects 
 
-## < Your Name >
+## < Arnur Togambayev >
 
 ## < Your App's Name >
 
