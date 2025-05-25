@@ -1,0 +1,19 @@
+{% extends "core/base.html" %}
+<!DOCTYPE html>
+<html lang="ru">
+
+<body>
+
+
+<main>
+    {% block content %}
+        <h1>Добро пожаловать!</h1>
+        <p>Это платформа, которая подбирает конкурсы и команду по твоим интересам на основе резюме или информации о тебе.</p>
+        {% if not user.is_authenticated %}
+            <p><a href="{% url 'signup' %}">Начни сейчас →</a></p>
+        {% endif %}
+    {% endblock %}
+</main>
+
+</body>
+</html>

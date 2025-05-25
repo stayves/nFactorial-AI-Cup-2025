@@ -1,0 +1,41 @@
+{% extends "core/base.html" %}
+
+{% block content %}
+
+<h2>AI-рекомендации для вас</h2>
+
+{% for comp in recommendations %}
+    <div>
+        <h3>{{ comp.title }}</h3>
+        <span class="date">Дата: {{ comp.date }}</span>
+        <span class="direction">Направление: {{ comp.direction }}</span>
+        <p>{{ comp.description }}</p>
+        <p>Теги: {{ comp.tags }}</p>
+        {% if comp.id %}
+        <form action="{% url 'register_competition' comp.id %}" method="post" style="margin-top:10px;">
+            {% csrf_token %}
+            <button type="submit">Участвую</button>
+        </form>
+        {% endif %}
+    </div>
+{% empty %}
+    <p>Нет рекомендаций.</p>
+{% endfor %}
+
+<h2>Лучшие сокомандники для вас</h2>
+<ul>
+    {% for teammate in teammates %}
+        <li>
+            <strong>{{ teammate.user.username }}</strong><br>
+            Интересы: {{ teammate.interests }}<br>
+            Хобби: {{ teammate.hobbies }}<br>
+            О себе: {{ teammate.bio }} <br>
+            Номер телефона: {{ teammate.phone }}<br>
+        </li>
+    {% empty %}
+        <li>Нет подходящих сокомандников.</li>
+    {% endfor %}
+</ul>
+
+<a class="back-link" href="{% url 'profile' %}">← Назад к профилю</a>
+{% endblock %}
