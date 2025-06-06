@@ -13,12 +13,12 @@ class ProfileForm(forms.ModelForm):
         ]
         widgets = {
             "hobbies": forms.Textarea(
-                attrs={"placeholder": "Введите список хобби через запятую"}
+                attrs={"placeholder": "Enter the list of hobbies separated by comma"}
             ),
             "interests": forms.Textarea(
-                attrs={"placeholder": "Введите список интересов через запятую"}
+                attrs={"placeholder": "Enter the list of intersets separated by cooma"}
             ),
             "bio": forms.Textarea(
-                attrs={"placeholder": "Напишите краткую информацию о себе"}
+                attrs={"placeholder": "Write a brief inroduction about yourself"}
             ),
         }

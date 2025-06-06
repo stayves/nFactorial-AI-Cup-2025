@@ -1,8 +1,8 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="eng">
 <head>
     <meta charset="UTF-8">
-    <title>{% block title %}AI Cup{% endblock %}</title>
+    <title>{% block title %}LauncxX{% endblock %}</title>
     <style>
         body {
             font-family: 'Segoe UI', Arial, sans-serif;
@@ -53,16 +53,16 @@
 </head>
 <body>
     <header>
-        <h1>nFactorial AI Cup 2025</h1>
+        <h1>EventGuideAI powered by LaunchX :) </h1>
         <nav>
-            <a href="{% url 'home' %}">Главная</a>
+            <a href="{% url 'home' %}">Main Page</a>
             {% if user.is_authenticated %}
-                <a href="{% url 'profile' %}">Профиль</a>
-                <a href="{% url 'recommendations' %}">Найти конкурсы</a>
-                <a href="{% url 'logout' %}">Выйти</a>
+                <a href="{% url 'profile' %}">Profile</a>
+                <a href="{% url 'recommendations' %}">FInd contests</a>
+                <a href="{% url 'logout' %}">Exit</a>
             {% else %}
-                <a href="{% url 'login' %}">Вход</a>
-                <a href="{% url 'signup' %}">Регистрация</a>
+                <a href="{% url 'login' %}">Sign in</a>
+                <a href="{% url 'signup' %}">Resgister</a>
             {% endif %}
         </nav>
     </header>

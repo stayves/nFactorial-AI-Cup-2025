@@ -1,7 +1,7 @@
 {% extends "core/base.html" %}
 
 {% block content %}
-<h2 class="profile-header">Ваш профиль</h2>
+<h2 class="profile-header">Your Profile</h2>
 <div class="profile-container">
     <form method="post" enctype="multipart/form-data" class="profile-form">
         {% csrf_token %}
@@ -20,7 +20,7 @@
                 <div style="margin-bottom: 15px;"></div>
             {% endfor %}
         </div>
-        <button type="submit" class="btn btn-primary">Сохранить</button>
+        <button type="submit" class="btn btn-primary">Save</button>
     </form>
 </div>
 {% endblock %}

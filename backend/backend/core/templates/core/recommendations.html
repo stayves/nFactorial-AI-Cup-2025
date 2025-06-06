@@ -2,40 +2,40 @@
 
 {% block content %}
 
-<h2>AI-рекомендации для вас</h2>
+<h2>AI recommendations for you</h2>
 
 {% for comp in recommendations %}
     <div>
         <h3>{{ comp.title }}</h3>
         <span class="date">Дата: {{ comp.date }}</span>
-        <span class="direction">Направление: {{ comp.direction }}</span>
+        <span class="direction">Direction: {{ comp.direction }}</span>
         <p>{{ comp.description }}</p>
-        <p>Теги: {{ comp.tags }}</p>
+        <p>tags: {{ comp.tags }}</p>
         {% if comp.id %}
         <form action="{% url 'register_competition' comp.id %}" method="post" style="margin-top:10px;">
             {% csrf_token %}
-            <button type="submit">Участвую</button>
+            <button type="submit">Participating</button>
         </form>
         {% endif %}
     </div>
 {% empty %}
-    <p>Нет рекомендаций.</p>
+    <p>No recommendations.</p>
 {% endfor %}
 
-<h2>Лучшие сокомандники для вас</h2>
+<h2>Best teammates for you</h2>
 <ul>
     {% for teammate in teammates %}
         <li>
             <strong>{{ teammate.user.username }}</strong><br>
-            Интересы: {{ teammate.interests }}<br>
-            Хобби: {{ teammate.hobbies }}<br>
-            О себе: {{ teammate.bio }} <br>
-            Номер телефона: {{ teammate.phone }}<br>
+            Interests: {{ teammate.interests }}<br>
+            Hobby: {{ teammate.hobbies }}<br>
+            About: {{ teammate.bio }} <br>
+            Telephone Number: {{ teammate.phone }}<br>
         </li>
     {% empty %}
-        <li>Нет подходящих сокомандников.</li>
+        <li>No suitable teammates.</li>
     {% endfor %}
 </ul>
 
-<a class="back-link" href="{% url 'profile' %}">← Назад к профилю</a>
+<a class="back-link" href="{% url 'profile' %}">← Back to profile</a>
 {% endblock %}
