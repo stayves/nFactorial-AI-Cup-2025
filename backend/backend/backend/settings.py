@@ -30,7 +30,7 @@ OPENAI_API_KEY = os.getenv("OPENAI_API_KEY", "default-secret-key")
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ["www.pythonanywhere.com"]
+ALLOWED_HOSTS = ["stayves.pythonanywhere.com"]
 
 # Application definition
 
