@@ -10,7 +10,7 @@
         <h1>Welcome!!</h1>
         <p>This is a platform that selects competitions and a team according to your interests based on your resume or information about you.</p>
         {% if not user.is_authenticated %}
-            <p><a href="{% url 'signup' %}">Н=Start NOW! →</a></p>
+            <p><a href="{% url 'signup' %}">Start NOW! →</a></p>
         {% endif %}
     {% endblock %}
 </main>
